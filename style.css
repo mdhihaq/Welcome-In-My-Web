@@ -1,0 +1,395 @@
+/*Mengatur font dasar dan background layar penuh*/
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: url(https://4kwallpapers.com/images/wallpapers/glossy-abstract-3840x2160-9602.jpg) no-repeat center center fixed;
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+/*PENYEMBUNYIAN ELEMEN*/
+.hidden {
+    display: none !important;
+}
+
+/*TOMBOL 1 WELCOME*/
+.welcome-btn {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 15px 40px;
+    border-radius: 25px;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 18px;
+    cursor: pointer;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.welcome-btn:hover {
+    background: rgba(0, 0, 0, 0.25);
+    transform: scale(1.03);
+}
+
+/*GLASSMORPHISM*/
+.login-container {
+    padding: 35px;
+    border-radius: 20px;
+    width: 330px;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 25px;
+    box-shadow: 0 10px 40px 0 rgba(0, 0, 0, 0.4);
+    color: #ffffffff;
+    text-align: center;
+    animation: expandBox 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+@keyframes expandBox {
+    0% {
+        transform: scale(0.2);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.form-title {
+    margin-top: 0;
+    margin-bottom: 25px;
+    font-size: 24px;
+    letter-spacing: 1px;
+}
+
+/* KOLOM INPUT*/
+.input-group {
+    position: relative;
+    margin-bottom: 30px;
+    text-align: left;
+    opacity: 0;
+    transform: translateY(10px);
+    animation: fadeInInput 0.4s ease forwards;
+}
+
+.input-group:nth-child(1) {
+    animation-delay: 0.15s;
+}
+
+.input-group:nth-child(2) {
+    animation-delay: 0.25s;
+}
+
+@keyframes fadeInInput {
+    0% {
+        opacity: 0%;
+        transform: translateY(10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.input-group input {
+    width: 100%;
+    padding: 18px 0 8px 0;
+    background: transparent;
+    border: none;
+    border-bottom: 1.5px solid rgba(255, 255, 255, 0.4);
+    color: #fff;
+    font-size: 15px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.input-group label {
+    position: absolute;
+    top: 12px;
+    left: 0;
+    color: #ddd;
+    font-size: 15px;
+    pointer-events: none;
+    transition: 0.3s ease all;
+}
+
+.input-group input:focus ~ label,
+.input-group input:not(:placeholder-shown) ~ label {
+    top: -8px;
+    font-size: 11px;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+/*INPUT LINE*/
+.line-anim {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background-color: #ffffff;
+    transition: width 0.4s ease;
+}
+
+.input-group input:focus ~ .line-anim,
+.input-group input:not(:placeholder-shown) ~ .line-anim {
+    width: 100%;
+}
+
+.extra-links {
+    text-align: left;
+    margin-bottom: 20px;
+    margin-top: -10px;
+}
+
+.extra-links a {
+    color: #e0e0e0;
+    font-size: 12px;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.extra-links a:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+.action-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.btn-item {
+    width: 100%;
+    padding: 12px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 15px;
+    color: #fff;
+    font-weight: bold;
+    font-size: 14px;
+    cursor: pointer;
+    opacity: 0;
+    transform: translateY(15px);
+    animation: cascadeDown 0.3s ease forwards;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+#btn-login {
+    animation-delay: 0.2s;
+}
+
+#btn-gmail {
+    animation-delay: 0.3s;
+}
+
+#btn-apple {
+    animation-delay: 0.4s;
+}
+
+#btn-facebook {
+    animation-delay: 0.5s;
+}
+
+@keyframes cascadeDown {
+    0% {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.btn-item:hover {
+    background: rgba(0, 0, 0, 0.35);
+}
+
+.btn-item:active {
+    transform: scale(0.98);
+}
+
+.btn-item.disabled {
+    background: rgba(0, 0, 0, 0.2);
+    color: rgba(255, 255, 255, 0.4);
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+.btn-item:disabled,
+.btn-item.disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+/* MENU 2 TOMBOL*/
+.back-arrow-btn {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.back-arrow-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(1.05);
+}
+
+.back-arrow-btn:active {
+    transform: scale(0.95);
+}
+
+/* MENU BIRTH DATE */
+.birth-select,
+.birth-input {
+    width: 100%;
+    padding: 18px 0 8px 0;
+    background: transparent;
+    border: none;
+    border-bottom: 1.5px solid rgba(255, 255, 255, 0.4);
+    color: #fff;
+    font-size: 15px;
+    outline: none;
+    appearance: none;
+    transition: border-color 0.3s ease;
+}
+
+.birth-select {
+    cursor: pointer;
+}
+
+.birth-input {
+    cursor: text;
+}
+
+.birth-title {
+    display: block;
+    font-size: 11px;
+    font-weight: bold;
+    color: #ffffff;
+    margin-bottom: 2px;
+    text-align: left;
+}
+
+.birth-row {
+    display: flex;
+    gap: 12px;
+    align-items: flex-end;
+    margin-top: -4px;
+}
+
+.birth-col-month,
+.birth-col-day,
+.birth-col-year {
+    flex: 1;
+    position: relative;
+    margin-top: 0px;
+}
+
+.birth-col-month label,
+.birth-col-day label,
+.birth-col-year label {
+    font-weight: normal;
+    color: #ddd;
+    position: absolute;
+    top: 18px;
+    left: 0;
+    color: #ddd;
+    font-size: 15px;
+    pointer-events: none;
+    transition: 0.3s ease all;
+}
+
+.birth-select option {
+    background: #2a2a2a;
+    color: #fff;
+}
+
+.birth-select:focus,
+.birth-input:focus {
+    border-bottom-color: #ffffff;
+}
+
+.birth-select:focus ~ label,
+.birth-select:has(option:not([value=""]):checked) ~ label,
+.birth-input:focus ~ label,
+.birth-input:not(:placeholder-shown) ~ label {
+    top: 0px !important;
+    font-size: 11px !important;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.birth-select:focus ~ .line-anim, 
+.birth-input:focus ~ .line-anim {
+    width: 100%;
+}
+
+.birth-input::placeholder {
+    color: #ddd;
+    opacity: 0.8;
+}
+
+input::-ms-reveal,
+input::-ms-clear {
+    display: none;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 0;
+    top: 12px;
+    font-size: 12px;
+    font-weight: bold;
+    color: #ffffff;
+    cursor: pointer;
+    user-select: none;
+    transition: opacity 0.2s ease;
+}
+
+.toggle-password:hover {
+    opacity: 0.8;
+}
+
+.btn-re
+
+/* TEXT ERROR */
+.error-text {
+    font-size: 11px;
+    font-weight: bold;
+    color: #ff4d4d;
+    margin-top: -28px;
+    display: block;
+    min-height: 15px;
+    transition: all 0.3s ease;
+    opacity: 0;
+}
+
+/* SHOW ERROR */
+.error-text.show {
+    opacity: 1;
+}

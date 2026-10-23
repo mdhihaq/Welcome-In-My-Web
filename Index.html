@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="id">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Welcome In My Web</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <!-- TOMBOL WELCOME -->
+         <div id="welcome-trigger" class="welcome-btn">
+            <span>WELCOME</span>
+         </div>
+
+        <!-- GLASSMORPHISM -->
+         <div id="login-box" class="login-container hidden">
+            <h1 class="form-title">WELCOME</h1>
+
+        <!-- FORM LOGIN -->
+         <form id="login-form">
+            <div class="input-group">
+                <input type="text" id="username" placeholder=" ">
+                <label for="username">Username</label>
+                <div class="line-anim"></div>
+            </div>
+
+            <div class="input-group">
+                <input type="password" id="password" placeholder=" ">
+                <label for="password">Password</label>
+                <span class="toggle-password hidden" id="toggle-password">Show</span>
+                <div class="line-anim"></div>
+            </div>
+
+            <div class="extra-links">
+                <a href="#" id="auth-link">Sign Up / Forget Password</a>
+            </div>
+            <div class="action-buttons">
+                <button type="submit" id="btn-login" class="btn-item" disabled>LOGIN</button>
+                <button type="button" id="btn-gmail" class="btn-item">GMAIL</button>
+                <button type="button" id="btn-apple" class="btn-item">APPLE</button>
+                <button type="button" id="btn-facebook" class="btn-item">FACEBOOK</button>
+            </div>
+         </form>
+         </div>
+
+         <!-- MENU SIGN UP / FORGET PASSWORD -->
+          <div id="options-box" class="login-container hidden">
+            <button type="button" id="btn-back-to-login" class="back-arrow-btn">&lt;</button>
+            <!-- <h1 class="form-title">SIGN UP / FORGET PASSWORD</h1> -->
+
+            <div class="action-buttons">
+                <button type="button" id="btn-goto-signup" class="btn-item">Create New Account</button>
+                <button type="button" id="btn-goto-forgot" class="btn-item">Forget Password</button>
+            </div>
+          </div>
+
+         <!-- FORM SIGN UP -->
+          <div id="signup-box" class="login-container hidden">
+            <button type="button" id="btn-back-from-signup" class="back-arrow-btn">&lt;</button>
+            <h1 class="form-title">SIGN UP</h1>
+
+            <form id="signup-form" autocomplete="off">
+
+                <!-- Username -->
+                <div class="input-group">
+                    <input type="text" id="su-username" placeholder=" ">
+                    <label for="su-username">Username</label>
+                    <div class="line-anim"></div>
+                </div>
+
+                <!-- Email -->
+                <div class="input-group">
+                    <input type="text" id="su-email" placeholder=" ">
+                    <label for="su-email">Email</label>
+                    <div class="line-anim"></div>
+                </div>
+                 <span class="error-text" id="email-error"></span>
+
+                <!-- Birth Date -->
+                <div class="input-group">
+                    <span class="birth-title">Birth Date</span>
+                    <div class="birth-row">
+
+                        <!-- Month -->
+                        <div class="birth-col-month">
+                            <select id="su-month" class="birth-select">
+                                <option value="" disabled selected hidden></option>
+                                <option value="1">January</option>
+                                <option value="2">February</option>
+                                <option value="3">March</option>
+                                <option value="4">April</option>
+                                <option value="5">May</option>
+                                <option value="6">June</option>
+                                <option value="7">July</option>
+                                <option value="8">August</option>
+                                <option value="9">September</option>
+                                <option value="10">October</option>
+                                <option value="11">November</option>
+                                <option value="12">December</option>
+                            </select>
+                            <label for="su-month">Month</label>
+                            <div class="line-anim"></div>
+                        </div>
+
+                        <!-- Day -->
+                         <div class="birth-col-day">
+                            <input type="text" id="su-day" placeholder=" " maxlength="2" oninput="this.value = this.value.replace(/[^0-9]/g, '')" class="birth-input">
+                            <label for="su-day">Day</label>
+                            <div class="line-anim"></div>
+                         </div>
+
+                        <!-- Year -->
+                        <div class="birth-col-year">
+                            <input type="text" id="su-year" placeholder=" " maxlength="4" oninput="this.value = this.value.replace(/[^0-9]/g, '')" class="birth-input">
+                            <label for="su-year">Year</label>
+                            <div class="line-anim"></div>
+                         </div>
+                    </div>
+                </div>
+
+                <!-- Password -->
+                <div class="input-group">
+                    <input type="password" id="su-password" placeholder=" ">
+                    <label for="su-password">Password</label>
+                    <span class="toggle-password hidden" id="su-toggle-password">Show</span>
+                    <div class="line-anim"></div>
+                </div>
+
+                <!-- TOMBOL REGISTER -->
+                <div class="action-buttons" style="margin-top: 25px;">
+                    <button type="submit" id="btn-register" class="btn-item" disabled>REGISTER</button>
+                </div>
+            </form>
+          </div>
+         <script src="script.js"></script>
+    </body>
+</html>
