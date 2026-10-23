@@ -36,3 +36,5 @@ app.post('/api/register', (req, res) => {
 app.listen(PORT, () => {
     console.log(`Server backend berjalan di http://localhost:${PORT}`);
 });
+
+module.exports = app;

@@ -264,9 +264,6 @@ if (signupForm) {
             if (data.success) {
                 signupForm.reset();
                 if (monthSelect) monthSelect.value = "";
-
-                signupBox.classList.add('hidden');
-                loginBox.classlist.remove('hidden')
             }
         } catch (error) {
             console.error('Error server:', error);
